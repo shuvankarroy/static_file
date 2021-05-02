@@ -14,7 +14,7 @@
         price: ".js-line-item-price",
         total: ".js-line-item-amount",
         itemRow: ".js-line-item"
-    }, t.prototype.TAX_RATE = .13, t.prototype.render = function (t) {
+    }, t.prototype.TAX_RATE = .18, t.prototype.render = function (t) {
         this.renderRowAmount(t), this.renderTotals()
     }, t.prototype.renderRowAmount = function (t) {
         var e = $(t.currentTarget).parents(this.SELECTORS.itemRow),

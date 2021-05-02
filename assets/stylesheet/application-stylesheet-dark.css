@@ -6,7 +6,7 @@
 
 main {
     display: block;
-    background-color: #ffffff
+    background-color: #3a3939;
 }
 
 p,
@@ -227,7 +227,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
-    background: #ffffff;
+    background: #0b0907;
     font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif;
     font-size: 1em;
     line-height: 1.5;
@@ -246,7 +246,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     display: block;
     margin-bottom: 0.5555555556em;
-    color: #212b35;
+    color: #ffffff;
     font-size: 2.25em;
     line-height: 1.2222222222;
     font-weight: 700;
@@ -346,7 +346,7 @@ h3,
     display: block;
     font-size: 1.25em;
     margin-bottom: 0.9em;
-    color: #212b35;
+    color: #ffffff;
     line-height: 1.2;
     font-weight: 700;
     font-family: ShopifySans, Helvetica, Arial, sans-serif
@@ -1778,13 +1778,14 @@ main p>a:focus {
     width: 100%;
     margin: 0 0 15px;
     padding: 1em 1em;
-    color: #212b35;
     font-family: ShopifySans, Helvetica, Arial, sans-serif;
     font-size: 1em;
     box-shadow: 0 0 0 1px #c4cdd5;
     border: 0;
     border-radius: 5px;
-    background-color: #ffffff;
+    /* dark theme */
+    background-color: #000000;
+    color: #ffffff;
     transition: padding 150ms;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1813,7 +1814,7 @@ main p>a:focus {
 .marketing-textarea.focus,
 .marketing-select-wrapper>select:focus,
 .marketing-select-wrapper>select.focus {
-    color: #000000;
+    color: #ffffff;
     outline: 0;
     box-shadow: 0 0 0 2px #5c6ac4
 }
@@ -1839,27 +1840,27 @@ main p>a:focus {
 .marketing-input[disabled],
 .marketing-textarea[disabled],
 .marketing-select-wrapper>select[disabled] {
-    background-color: #dfe3e8
+    background-color: #707070
 }
 
 .marketing-input::-webkit-input-placeholder,
 .marketing-textarea::-webkit-input-placeholder {
-    color: #637381
+    color: #707070
 }
 
 .marketing-input:-ms-input-placeholder,
 .marketing-textarea:-ms-input-placeholder {
-    color: #637381
+    color: #707070
 }
 
 .marketing-input::-ms-input-placeholder,
 .marketing-textarea::-ms-input-placeholder {
-    color: #637381
+    color: #707070
 }
 
 .marketing-input::placeholder,
 .marketing-textarea::placeholder {
-    color: #637381
+    color: #707070
 }
 
 .marketing-input--error,
@@ -1924,7 +1925,7 @@ main p>a:focus {
     font-family: ShopifySans, Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 0.8125em;
-    color: #454f5b
+    color: #7a7171
 }
 
 .marketing-label--in-field {
@@ -2645,7 +2646,8 @@ img[data-srcset].lazyloaded {
 
 .hero .hero__image {
     width: 100%;
-    height: auto
+    height: auto;
+    filter: invert(1);
 }
 
 .cookies-notice {
@@ -5085,7 +5087,7 @@ body>.signup--hidden {
 }
 
 .background-light {
-    background-color: #f4f6f8
+    background-color: #0b0907;
 }
 
 .background-lowlight {
@@ -6300,7 +6302,7 @@ body>.signup--hidden {
 
 .step-counter__label,
 .step-counter .step-counter__label {
-    color: #637381;
+    color: #ffffff;
     display: inline
 }
 
@@ -6327,7 +6329,7 @@ body>.signup--hidden {
 
 .form-header {
     border-bottom: 1px solid #dfe3e8;
-    margin-bottom: 1.875em
+    margin-bottom: 1.875em;
 }
 
 @media screen and (max-width: 46.8125em) {
@@ -6343,6 +6345,7 @@ body>.signup--hidden {
         clear: both
     }
     .form-header__heading {
+        color: #ffffff;
         float: left
     }
     .form-header__status {
@@ -7081,4 +7084,72 @@ body>.signup--hidden {
         -webkit-column-count: 3;
         column-count: 3
     }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+td, th{
+    color: white;
+}
+
+.line-item__amount__total{
+    color: white;
 }

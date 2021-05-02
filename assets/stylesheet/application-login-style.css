@@ -1,110 +1,168 @@
-body {
-    margin: 0;
+:root {
+    --body_gradient_left: #7200D0;
+    --body_gradient_right: #C800C1;
+    --form_bg: #302d2d;
+    --input_bg: #E5E5E5;
+    --input_hover: #eaeaea;
+    --submit_bg: #1FCC44;
+    --submit_hover: #40e263;
+    --icon_color: #6b6b6b;
+}
+
+* {
     padding: 0;
-    background: url("https://res.cloudinary.com/dx4eciqv8/image/upload/v1591897729/login-background_xukdco.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: sans-serif;
-}
-
-.bottomleft {
-    position: absolute;
-    bottom: 0px;
-    right: 0%;
-    font-size: 18px;
-    color: red;
-}
-
-.container {
-    position: relative;
-}
-
-marquee {
-    behavior: slide;
-    direction: left;
-}
-
-.loginbox {
-    width: 320px;
-    height: 420px;
-    background: #000;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    margin: 0;
     box-sizing: border-box;
-    padding: 70px 30px;
 }
 
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
+body {
+    /* make the body full height*/
+    height: 100vh;
+    /* set our custom font */
+    font-family: 'Roboto',
+        sans-serif;
+    /* create a linear gradient*/
+    /* background-image: linear-gradient(to right, var(--body_gradient_left), var(--body_gradient_right)); */
+    /* background-image:url(../attachments/login-background.jpg); */
+    background-image:url("https://res.cloudinary.com/dx4eciqv8/image/upload/v1591897729/login-background_xukdco.jpg");
+    display: flex;
 }
 
-h1 {
-    margin: 0;
-    padding: 0 0 20px;
+#form_wrapper {
+    width: 1000px;
+    height: 600px;
+    /* this will help us center it*/
+    margin: auto;
+    background-color: var(--form_bg);
+    border-radius: 50px;
+    /* make it a grid container*/
+    display: grid;
+    /* with two columns of same width*/
+    grid-template-columns: 1fr 1fr;
+    /* with a small gap in between them*/
+    grid-gap: 5vw;
+    /* add some padding around */
+    padding: 5vh 15px;
+}
+
+#form_left {
+    /* center the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form_left img {
+    width: 350px;
+    height: 350px;
+}
+
+#form_right {
+    display: grid;
+    /* single column layout */
+    grid-template-columns: 1fr;
+    /* have some gap in between elements*/
+    grid-gap: 20px;
+    padding: 10% 5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
     text-align: center;
-    font-size: 22px;
+    color: white;
 }
 
-h3 {
-    margin: 0;
-    padding: 0 0 20px;
+.span_container{
     text-align: center;
-    font-size: 16px;
+    color: white;
 }
 
-.loginbox p {
-    margin: 0;
-    padding: 0;
+.input_container {
+    background-color: var(--input_bg);
+    /* vertically align icon and text inside the div*/
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.input_container:hover {
+    background-color: var(--input_hover);
+}
+
+.input_container,
+#input_submit {
+    height: 60px;
+    /* make the borders more round */
+    border-radius: 30px;
+    width: 100%;
+}
+
+.input_field {
+    /* customize the input tag with lighter font and some padding*/
+    color: var(--icon_color);
+    background-color: inherit;
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+.input_field:hover,
+.input_field:focus {
+    /* remove the outline */
+    outline: none;
+}
+
+#input_submit {
+    /* submit button has a different color and different padding */
+    background-color: var(--submit_bg);
+    padding-left: 0;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+#input_submit:hover {
+    background-color: var(--submit_hover);
+    /* simple color transition on hover */
+    transition: background-color,
+        1s;
+    cursor: pointer;
+}
+
+/* shift it a bit lower */
+#create_account {
+    display: block;
+    position: relative;
+    top: 0px;
+}
+
+a {
+    /* remove default underline */
+    text-decoration: none;
+    color: var(--submit_bg);
     font-weight: bold;
 }
 
-.loginbox input {
-    width: 100%;
-    margin-bottom: 20px;
+a:hover {
+    color: var(--submit_hover);
 }
 
-.loginbox input[type="text"],
-input[type="password"] {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 16px;
+i {
+    color: var(--icon_color);
 }
 
-.loginbox input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #fb2525;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-}
+/* make it responsive */
+@media screen and (max-width:768px) {
 
-.loginbox input[type="submit"]:hover {
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
-}
-
-.loginbox a {
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: darkgrey;
-}
-
-.loginbox a:hover {
-    color: #ffc107;
+    /* make the layout  a single column and add some margin to the wrapper */
+    #form_wrapper {
+        grid-template-columns: 1fr;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    /* on small screen we don't display the image */
+    #form_left {
+        display: none;
+    }
 }
